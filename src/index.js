@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import { CardUser } from './components/Card';
-import { Card } from './components/Card';
-import { Layout } from './components/Layout';
+import { Search } from './components/Search';
+import { App } from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Layout>
-      <Card />
-    </Layout>
+    <Search/>
+    <App/>
   </React.StrictMode>
 );
