@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import {Character} from "./Character";
+import {Character} from "./Character/Index";
 
 export const CharacterList = () => {
 

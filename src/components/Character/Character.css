@@ -1,0 +1,23 @@
+.characters {
+    display: flex;
+    flex-direction: row;
+    border-radius: 30px;
+}
+.character {
+
+}
+.characters__img {
+    
+}
+.characters__species {
+    
+}
+.characters__name {
+    
+}
+.characters__info {
+    
+}
+.characters__info span {
+    
+}
