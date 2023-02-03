@@ -1,15 +1,23 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import {Character} from "./Character/Index";
+import {Character} from "../Character/Index";
 
 export const Pagination = ({page, setPage}) => {
 
   return (
     <div>
-      <p>Page {page}</p>
-      <button onClick={() => setPage=(page + 1)}>
-      Page {page + 1}
+      <button 
+        onClick={() => page > 1 && setPage(page - 1)} 
+        disabled={page <= 1}>
+        Page {page - 1}
       </button>
+
+      <p>Page {page}</p>
+
+      <button onClick={() => setPage(page + 1)}>
+        Page {page + 1}
+      </button>
+
     </div>
   )
 

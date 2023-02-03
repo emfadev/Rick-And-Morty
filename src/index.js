@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Search } from './components/Search';
-import { CharacterList } from './components/CharacterList';
+import { CharacterList } from './components/CharacterList/Index';
 import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
