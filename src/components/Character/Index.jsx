@@ -2,14 +2,13 @@ import React from "react";
 import "./Character.css"
 import "../../index.css"
 
-export const Character = ({ characters, key, ko }) => {
+export const Character = ({ characters }) => {
 
   return (
     <div className="characters">
       <div className="character">
         <img className="character__img" src={characters.image} alt="*" />
         <p className="character__species">Specie: {characters.species}</p>
-        <p>{key} keyner {ko}</p>
       </div>
       <div className="characters__container">
         <h2 className="characters__name">{characters.name}</h2>

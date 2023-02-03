@@ -75,7 +75,7 @@ export const CharacterList = () => {
           return (
 
             <div className="mainContainer__CharacterContainer" key={item.id}>
-              <Character characters={item} ko={item.id} />
+              <Character characters={item} />
             </div>
 
 
