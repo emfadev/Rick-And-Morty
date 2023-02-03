@@ -8,6 +8,7 @@ export const Character = ({characters}) => {
         <img src={characters.image} alt="*" />
         <span><p>Status: {characters.status}</p></span>
         <span><p>Specie: {characters.species}</p></span>
+        <p>Location: {characters.location.name}</p>
       </div>
     )
 }
