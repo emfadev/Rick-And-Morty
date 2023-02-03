@@ -5,14 +5,17 @@
     --fourthColor: #1D8E43;
     --fifthColor: #010104;
 }
+
 html {
     box-sizing: border-box;
     font-size: 62.5%;
     line-height: 1.5;
 }
+
 *, *::after, *::before {
     box-sizing: inherit;
 }
+
 body {
     font-size: 1.6rem;
     max-width: 120rem;
@@ -24,7 +27,13 @@ body {
     background-color: #121212;
    
 }
+
 img {
     max-width: 100%;
+    height: auto;
     display: block;
+}
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
 }
