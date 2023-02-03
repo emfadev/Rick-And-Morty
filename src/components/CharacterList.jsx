@@ -17,7 +17,7 @@ export const CharacterList = () => {
     }, []);
 
     return (
-        <div>
+        <div className="container">
         {
 
           characters.map(characters => {
