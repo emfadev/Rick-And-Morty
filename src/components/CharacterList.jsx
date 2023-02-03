@@ -59,7 +59,7 @@ export const CharacterList = () => {
     apiFetch();
   }, [page]);
 
-  return (
+  return (<>
     <div className="container">
       <input
         className="form-control inputBuscar"
@@ -86,6 +86,6 @@ export const CharacterList = () => {
 
       <Pagination page={page} setPage={setPage} />
     </div>
-  )
+  </>)
 }
 
