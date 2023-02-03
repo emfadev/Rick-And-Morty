@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import {Character} from "./Character";
+import {Character} from "./Character/Index";
 
 export const Pagination = ({page, setPage}) => {
 
@@ -30,27 +30,26 @@ export const CharacterList = () => {
     }
 
         apiFetch();
-    }, []);
+    }, [page]); 
 
     return (
-        <div>
+        <div className="container">
+          <Pagination page={page} setPage={setPage} />
         {
 
           characters.map(characters => {
             return (
 
-                <div className="mainContainer">
-                  <Pagination page={page} setPage={setPage} />
-                  <div className="mainContainer__CharacterContainer">
-                    <Character key={characters.id} characters={characters} />
-
-                  </div>
+                <div className="mainContainer__CharacterContainer">
+                  <Character key={characters.id} characters={characters} />
                 </div>
 
 
             )
           })
+
         }
+        <Pagination page={page} setPage={setPage} />
       </div>
     )
 }
