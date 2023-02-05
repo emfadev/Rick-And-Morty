@@ -23,6 +23,7 @@ export const CharacterList = () => {
   const [characters, setCharacters] = useState([]);
   const [page, setPage] = useState(1);
   const [busqueda, setBusqueda] = useState("");
+  const [defaultCharacters, setDefaultCharacters] = useState([]);
 
   useEffect(() => {
     const apiFetch = async () => {
@@ -30,6 +31,7 @@ export const CharacterList = () => {
         const response = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`);
         const apiData = await response.json();
         setCharacters(apiData.results);
+        setDefaultCharacters(apiData.results)
       } catch (error) {
         console.error(error);
       }
@@ -40,11 +42,13 @@ export const CharacterList = () => {
 
   const handleChange = (event) => {
     setBusqueda(event.target.value);
-    setCharacters(
-      characters.filter((character) =>
+    if (event.target.value){
+      setCharacters(defaultCharacters.filter((character) => 
         character.name.toLowerCase().includes(event.target.value.toLowerCase())
-      )
-    );
+      ))
+    } else {
+      setCharacters(defaultCharacters)
+    }
   };
 
   return (
