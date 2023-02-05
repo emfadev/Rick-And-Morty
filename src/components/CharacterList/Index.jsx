@@ -1,63 +1,73 @@
-import { useEffect, useState } from "react";
-import React from "react";
-import {Character} from "../Character/Index";
+import React, { useEffect, useState } from "react";
+import { Character } from "../Character/Index";
 
-export const Pagination = ({page, setPage}) => {
-
+export const Pagination = ({ page, setPage }) => {
   return (
     <div>
-      <button 
-        onClick={() => page > 1 && setPage(page - 1)} 
+      <button
+        onClick={() => setPage(page - 1)}
         disabled={page <= 1}>
-        Page {page - 1}
+        Anterior
       </button>
 
-      <p>Page {page}</p>
+      <p>Página {page}</p>
 
       <button onClick={() => setPage(page + 1)}>
-        Page {page + 1}
+        Siguiente
       </button>
-
     </div>
-  )
-
-}
+  );
+};
 
 export const CharacterList = () => {
+  const [characters, setCharacters] = useState([]);
+  const [page, setPage] = useState(1);
+  const [busqueda, setBusqueda] = useState("");
 
-    const [characters, setCharacters] = useState([]);
-    const [page, setPage] = useState(1);
-
-    useEffect(() =>{
-      const apiFetch = async () => {
+  useEffect(() => {
+    const apiFetch = async () => {
+      try {
         const response = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`);
         const apiData = await response.json();
         setCharacters(apiData.results);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-        console.log(apiData)
-    }
+    apiFetch();
+  }, [page]);
 
-        apiFetch();
-    }, [page]); 
+  const handleChange = (event) => {
+    setBusqueda(event.target.value);
+    setCharacters(
+      characters.filter((character) =>
+        character.name.toLowerCase().includes(event.target.value.toLowerCase())
+      )
+    );
+  };
 
-    return (
-        <div className="container">
-          <Pagination page={page} setPage={setPage} />
-        {
-
-          characters.map(characters => {
-            return (
-
-                <div className="mainContainer__CharacterContainer">
-                  <Character key={characters.id} characters={characters} />
-                </div>
-
-
-            )
-          })
-
-        }
-        <Pagination page={page} setPage={setPage} />
+  return (
+    <>
+      <input
+        className="form-control inputBuscar"
+        value={busqueda}
+        placeholder="Búsqueda por nombre"
+        onChange={handleChange}
+      />
+      <Pagination page={page} setPage={setPage} />
+      <div className="container">
+        {characters.length > 0 ? (
+          characters.map((character) => (
+            <div className="mainContainer__CharacterContainer" key={character.id}>
+              <Character characters={character} />
+            </div>
+          ))
+        ) : (
+          <p>No se encontraron resultados</p>
+        )}
       </div>
-    )
-}
+      <Pagination page={page} setPage={setPage} />
+    </>
+  );
+};
