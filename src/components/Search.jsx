@@ -4,29 +4,29 @@ import {useState} from "react";
 
 export const Search = ({fun}) => {
 
-    const [busqueda, setbusqueda] = useState([])
+    const [searches, setsearches] = useState([])
     const [tablaUser, settablaUser] = useState([])
 
     const search = (e) => {	
-        setbusqueda(e.target.value)
+        setsearches(e.target.value)
         filtro( e.target.value);
     }
 
     const filtro = (e) => {
-        var resultado = tablaUser.filter(
+        var result = tablaUser.filter(
             (e) => {
-            if(e.name.toString().toLowerCase().includes(resultado.toLowerCase())){
+            if(e.name.toString().toLowerCase().includes(result.toLowerCase())){
                 return e;
             }
         })
-        fun = resultado;
+        fun = result;
     }
 
     return(
         <div>
             <input
              placeholder="Search..." 
-             value={busqueda}
+             value={searches}
              onChange={search}  
              />
         </div>

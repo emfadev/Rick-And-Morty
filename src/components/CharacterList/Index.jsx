@@ -7,13 +7,13 @@ export const Pagination = ({ page, setPage }) => {
       <button
         onClick={() => setPage(page - 1)}
         disabled={page <= 1}>
-        Anterior
+        Back
       </button>
 
-      <p>Página {page}</p>
+      <p>Page {page}</p>
 
       <button onClick={() => setPage(page + 1)}>
-        Siguiente
+        Following
       </button>
     </div>
   );
@@ -22,7 +22,7 @@ export const Pagination = ({ page, setPage }) => {
 export const CharacterList = () => {
   const [characters, setCharacters] = useState([]);
   const [page, setPage] = useState(1);
-  const [busqueda, setBusqueda] = useState("");
+  const [searches, setsearches] = useState("");
   const [defaultCharacters, setDefaultCharacters] = useState([]);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export const CharacterList = () => {
   }, [page]);
 
   const handleChange = (event) => {
-    setBusqueda(event.target.value);
+    setsearches(event.target.value);
     if (event.target.value){
       setCharacters(defaultCharacters.filter((character) => 
         character.name.toLowerCase().includes(event.target.value.toLowerCase())
@@ -54,9 +54,9 @@ export const CharacterList = () => {
   return (
     <>
       <input
-        className="form-control inputBuscar"
-        value={busqueda}
-        placeholder="Búsqueda por nombre"
+        className="form-control inputSearch"
+        value={searches}
+        placeholder="Search by name"
         onChange={handleChange}
       />
       <Pagination page={page} setPage={setPage} />
@@ -68,7 +68,7 @@ export const CharacterList = () => {
             </div>
           ))
         ) : (
-          <p>No se encontraron resultados</p>
+          <p>No results found</p>
         )}
       </div>
       <Pagination page={page} setPage={setPage} />
