@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import { Character } from "../components/Character/Index";
+import './characterList.css'
+import morty from '../assets/img/Logotipo-rick-and-morty.png'
 
 
 
@@ -30,13 +32,11 @@ export const CharacterList = () => {
   const [caracter, setcaracter] = useState([]);
   const [page, setPage] = useState(1);
   const [tablaUsuarios, setTablaUsuarios] = useState([]);
-  const [busqueda, setBusqueda] = useState("");
+  const [busqueda, setBusqueda] = useState("")
 
-
-  const handleChange = e => {
+  const handleChange = (e) => {
     setBusqueda(e.target.value);
     filtrar(e.target.value);
-    console.log(e.target.value)
   }
 
   const filtrar = (terminoBusqueda) => {
@@ -60,14 +60,24 @@ export const CharacterList = () => {
   }, [page]);
 
   return (<>
-    <div className="container">
-      <input
+    <div className='header'>
+    <div className="k">
+        <img src={morty} alt="Rick" />
+    </div>
+    <div className="k o">
+    <input
         className="form-control inputBuscar"
         value={busqueda}
         placeholder="Búsqueda por nombre"
         onChange={handleChange}
       />
+    </div>
+    <div className="k">
+
       <Pagination page={page} setPage={setPage} />
+    </div>
+    </div>
+    <div className="container">
 
       {
 
@@ -84,8 +94,8 @@ export const CharacterList = () => {
 
       }
 
-      <Pagination page={page} setPage={setPage} />
     </div>
+      <Pagination page={page} setPage={setPage} />
   </>)
 }
 
