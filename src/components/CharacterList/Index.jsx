@@ -1,63 +1,64 @@
-import { useEffect, useState } from "react";
-import React from "react";
-import {Character} from "../Character/Index";
-
-export const Pagination = ({page, setPage}) => {
-
-  return (
-    <div>
-      <button 
-        onClick={() => page > 1 && setPage(page - 1)} 
-        disabled={page <= 1}>
-        Page {page - 1}
-      </button>
-
-      <p>Page {page}</p>
-
-      <button onClick={() => setPage(page + 1)}>
-        Page {page + 1}
-      </button>
-
-    </div>
-  )
-
-}
+import { Character } from "../Character/Index";
+import React, { useEffect, useState } from "react";
+import { SearchBar } from "../Search/Index";
+import { PageNav } from "../Pagination/Index";
+import { CharacterModal } from "../CharacterModal/Index";
 
 export const CharacterList = () => {
+  const [characters, setCharacters] = useState([]);
+  const [page, setPage] = useState(1);
+  const [defaultCharacters, setDefaultCharacters] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
 
-    const [characters, setCharacters] = useState([]);
-    const [page, setPage] = useState(1);
-
-    useEffect(() =>{
-      const apiFetch = async () => {
+  useEffect(() => {
+    const apiFetch = async () => {
+      try {
         const response = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`);
         const apiData = await response.json();
         setCharacters(apiData.results);
+        setDefaultCharacters(apiData.results);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-        console.log(apiData)
-    }
+    apiFetch();
+  }, [page]);
 
-        apiFetch();
-    }, [page]); 
+  const handleOpenModal = (character) => {
+    setSelectedCharacter(character);
+    setIsOpen(true);
+    };
+    
+    const handleCloseModal = () => {
+    setSelectedCharacter(null);
+    setIsOpen(false);
+    };
+  
 
-    return (
-        <div className="container">
-          <Pagination page={page} setPage={setPage} />
-        {
+  return (
+    <>
+      <SearchBar defaultCharacters={defaultCharacters} setCharacters={setCharacters} />
+      <div className="container-characterList">
 
-          characters.map(characters => {
-            return (
-
-                <div className="mainContainer__CharacterContainer">
-                  <Character key={characters.id} characters={characters} />
-                </div>
-
-
-            )
-          })
-
-        }
-        <Pagination page={page} setPage={setPage} />
-      </div>
-    )
-}
+        {characters.length > 0 ? (
+          characters.map((character) => (
+            <div className="mainContainer__CharacterContainer" key={character.id} onClick={() => handleOpenModal(character)}>
+            <Character characters={character} />
+          </div>
+        ))
+      ) : (
+        <p>No results found</p>
+      )}
+        {isOpen && selectedCharacter && (
+          <CharacterModal
+            selectedCharacter={selectedCharacter}
+            handleCloseModal={handleCloseModal}
+          />
+      )}
+    </div>
+    <PageNav page={page} setPage={setPage} />
+  </>
+);
+};

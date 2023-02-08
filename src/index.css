@@ -4,12 +4,13 @@
     --thirdColor: #F4F017;
     --fourthColor: #1D8E43;
     --fifthColor: #010104;
+    --LightColor: #ededed;
+    --MediumColor: #7e7e7e;
 }
 
 html {
     box-sizing: border-box;
     font-size: 62.5%;
-    line-height: 1.5;
 }
 
 *, *::after, *::before {
@@ -17,23 +18,38 @@ html {
 }
 
 body {
-    font-size: 1.6rem;
-    max-width: 120rem;
+    background: linear-gradient(250deg, var(--fifthColor) 20%, rgba(6,6,71,1) 100%);
     font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.6rem;
     margin: 0 auto;
-    
-    text-align: center;
-    color: white;
-    background-color: #121212;
-   
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
 h1, h2, h3, p {
     margin: 0;
     padding: 0;
+}
+
+.container-characterList {
+    display: grid;
+    gap: 3rem;
+    margin: 0 auto;
+    width: min(120rem, 90%);
+}
+
+@media (min-width: 576px) { 
+    .container-characterList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) { 
+    .container-characterList {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (min-width: 998px) { 
+    .container-characterList {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
