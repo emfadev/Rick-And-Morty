@@ -3,6 +3,8 @@ import "./Pagination.css"
 import "../../index.css"
 
 export const PageNav = ({ page, setPage }) => {
+
+
   return (
     <div className="container-pagination">
       <button className="pagination__button"
