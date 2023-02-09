@@ -13,9 +13,16 @@ export const PageNav = ({ page, setPage }) => {
 
       <p className="pagination__page">Page {page}</p>
 
-      <button className="pagination__button" onClick={() => setPage(page + 1)}>
+      
+      <a href="#este">
+      <button className="pagination__button" onClick={() =>{ 
+        setPage(page + 1)
+        
+      }
+    }>
         Next
       </button>
+    </a>
     </div>
   );
 };
