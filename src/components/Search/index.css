@@ -1,15 +1,13 @@
 .search {
     color: aliceblue ;
-    background-image: url('../../assets/img/cena.webp');
+    background-image: url('../../assets/img/cena-n.webp');
     background-size: cover;
     height: 40rem;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.4;
-    display: flex !important;
+    /* opacity: 0.4; */
     justify-content: center;
-    align-items: center;
-
+    text-align: center;
 }
 .foto {
     opacity: 0.4;

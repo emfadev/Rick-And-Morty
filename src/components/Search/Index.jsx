@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './index.css'
+import rick from '../../assets/img/Logotipo-rick-and-morty.png';
 
 export const SearchBar = ({ defaultCharacters, setCharacters }) => {
   const [searches, setsearches] = useState("");
@@ -18,7 +19,11 @@ export const SearchBar = ({ defaultCharacters, setCharacters }) => {
   return (
     <>
     <div className="search">
-      <div className="som">
+      
+    <div>
+        <img src={rick} alt="foto" />
+    </div>
+    <div className="som">
     <input
     id="este"
     className="form-control inputSearch"
@@ -26,12 +31,6 @@ export const SearchBar = ({ defaultCharacters, setCharacters }) => {
     placeholder="Search by name 🔎.."
     onChange={handleChange}
   /></div>
-    <div>
-        <h1>hellos</h1>
-    </div>
-    <div>
-        <h1>ho</h1>
-    </div>
     </div>
     </>
   );
