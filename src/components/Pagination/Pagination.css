@@ -1,20 +1,27 @@
 .container-pagination {
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
     gap: 2rem;
+    justify-content: center;
     margin: 3rem 0;
 }
 .pagination__page {
     color: var(--LightColor);
 }
 .pagination__button {
+    background-color: var(--LightColor);
     border-radius: 0;
     border: none;
-    padding: .5rem 2rem;
-    text-transform: uppercase;
+    color: var(--fifthColor);
+    cursor: pointer;
     font-weight: 700;
     letter-spacing: .2rem;
-    background-color: var(--LightColor);
-    color: var(--fifthColor);
+    padding: .7rem 2rem;
+    text-transform: uppercase;
+    transition: background-color .3s ease, color .3s ease;
+    border-radius: .5rem;
+}
+.pagination__button:hover {
+    background-color: var(--mainColor);
+    color: var(--LightColor);
 }
