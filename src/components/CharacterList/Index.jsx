@@ -40,8 +40,8 @@ export const CharacterList = () => {
   return (
     <>
       <SearchBar defaultCharacters={defaultCharacters} setCharacters={setCharacters} />
+      <PageNav page={page} setPage={setPage} />
       <div className="container-characterList">
-
         {characters.length > 0 ? (
           characters.map((character) => (
             <div className="mainContainer__CharacterContainer" key={character.id} onClick={() => handleOpenModal(character)}>
