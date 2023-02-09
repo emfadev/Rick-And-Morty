@@ -4,7 +4,7 @@
     gap: 2rem;
     justify-content: space-between;
     width: min(120rem, 90%);
-    margin: 3rem auto;
+    margin: 4rem auto 1rem auto;
 }
 .pagination__page {
     color: var(--LightColor);
