@@ -1,9 +1,9 @@
 .container-header {
     color: aliceblue ;
-    background-image: url('../../assets/img/cena-n.webp');
+    background-image: url('../../assets/img/header-rick-and-morty.webp');
     background-size: cover;
-    height: 40rem;
-    background-position: center;
+    height: 35rem;
+    background-position: bottom right;
     background-repeat: no-repeat;
     justify-content: center;
     text-align: center;
