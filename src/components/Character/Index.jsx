@@ -1,5 +1,5 @@
 import React from "react";
-import "./character.css"
+import "./styles.css";
 import "../../index.css"
 
 export const Character = ({ characters }) => {

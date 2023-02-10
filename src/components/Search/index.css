@@ -1,6 +1,6 @@
 .container-header {
     color: aliceblue ;
-    background-image: url('../../assets/img/cena-n.webp');
+    background-image: url('../../assets/img/cena-nn.webp');
     background-size: cover;
     height: 40rem;
     background-position: center;
@@ -13,4 +13,5 @@
 .searchBar {
     padding: 1rem 15rem 1rem 1rem;
     border-radius: 1rem;
+    border: 1px solid #64bc46;
 }

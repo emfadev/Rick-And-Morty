@@ -1,5 +1,6 @@
 import React from "react";
-import "./characterModal.css"
+// import "./characterModal.css"
+import "./styles.css"
 
 export const CharacterModal = ({ selectedCharacter, handleCloseModal }) => {
 
@@ -15,7 +16,7 @@ export const CharacterModal = ({ selectedCharacter, handleCloseModal }) => {
                 <div className="character__info">
                     <div>
                         <div className="character__status character__status--x">
-                            <p className="character__section">Id: <span className="character__value">{selectedCharacter.id}</span></p>
+                           <p className="character__section">Id: <span className="character__value">{selectedCharacter.id}</span></p>
                             <button onClick={handleCloseModal}>x</button>
                         </div>
                         <h2 className="characters__name">{selectedCharacter.name}</h2>
