@@ -1,14 +1,16 @@
-.search {
+.container-header {
     color: aliceblue ;
     background-image: url('../../assets/img/cena-n.webp');
     background-size: cover;
     height: 40rem;
     background-position: center;
     background-repeat: no-repeat;
-    /* opacity: 0.4; */
     justify-content: center;
     text-align: center;
+    padding: 1rem;
 }
-.foto {
-    opacity: 0.4;
+
+.searchBar {
+    padding: 1rem 15rem 1rem 1rem;
+    border-radius: 1rem;
 }

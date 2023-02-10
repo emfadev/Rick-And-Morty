@@ -27,6 +27,6 @@ export const Character = ({ characters }) => {
                     <p className="character__value">{characters.origin.name}</p>
                 </div>
             </div>
-        </div>
+        </div> 
     )
 }

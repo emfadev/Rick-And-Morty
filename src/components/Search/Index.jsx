@@ -18,7 +18,7 @@ export const SearchBar = ({ defaultCharacters, setCharacters }) => {
 
   return (
     <>
-    <div className="search">
+    <div className="container-header">
       
     <div>
         <img src={rick} alt="foto" />
@@ -26,9 +26,9 @@ export const SearchBar = ({ defaultCharacters, setCharacters }) => {
     <div className="som">
     <input
     id="este"
-    className="form-control inputSearch"
+    className="searchBar"
     value={searches}
-    placeholder="Search by name 🔎.."
+    placeholder="Search by name..."
     onChange={handleChange}
   /></div>
     </div>
