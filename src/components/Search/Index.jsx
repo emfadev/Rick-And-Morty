@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './index.css'
-import rick from '../../assets/img/Logotipo-rick-and-morty.png';
+import rick from '../../assets/img/Rick&MortyLogo.png';
 
 export const SearchBar = ({ defaultCharacters, setCharacters }) => {
   const [searches, setsearches] = useState("");
@@ -21,7 +21,7 @@ export const SearchBar = ({ defaultCharacters, setCharacters }) => {
     <div className="container-header">
       
     <div>
-        <img src={rick} alt="foto" />
+        <img src={rick} alt="*" />
     </div>
     <div className="som">
     <input

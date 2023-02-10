@@ -1,5 +1,4 @@
 import React from "react";
-// import "./characterModal.css"
 import "./styles.css"
 
 export const CharacterModal = ({ selectedCharacter, handleCloseModal }) => {

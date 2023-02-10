@@ -19,7 +19,7 @@ html {
 }
 
 body {
-    background: linear-gradient(250deg, var(--fifthColor) 20%, rgba(6,6,71,1) 100%);
+    background-image: url('./assets/img/main-background.webp');
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.6rem;
     margin: 0 auto;
@@ -33,7 +33,7 @@ h1, h2, h3, p {
 .container-characterList {
     display: grid;
     gap: 3rem;
-    margin: 0 auto;
+    margin: 10rem auto 0 auto;
     width: min(120rem, 90%);
 }
 
