@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import "../../index.css"
+import "../../index.css";
 
 export const Character = ({ characters }) => {
 
@@ -14,7 +14,10 @@ export const Character = ({ characters }) => {
                 <div>
                     <h2 className="characters__name">{characters.name}</h2>
                     <div className="character__status">
-                        <div className={characters.status === "Alive" ? ("character__circle") : characters.status === "Dead" ? ("character__circle--dead") : ("character__circle--unknown") }></div>
+                        <div className={characters.status === "Alive" ? ("character__circle") :
+                                        characters.status === "Dead" ? ("character__circle--dead") :
+                                        ("character__circle--unknown") }>   
+                        </div>
                         <p className="character__value">{characters.status}</p>
                     </div>
                 </div>

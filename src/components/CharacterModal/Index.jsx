@@ -13,12 +13,12 @@ export const CharacterModal = ({ selectedCharacter, handleCloseModal }) => {
                     <p className="character__species">{selectedCharacter.species}</p>
                 </div>
 
-                <div className="character__info">
+                <div className="character__info character__info--modal">
                     <div>
                         <div className="character__status character__status--x">
-                           <p className="character__section">Id: <span className="character__value">{selectedCharacter.id}</span></p>
-                            <button style={{ height: '100px', width: '100px' }}  className='character-close__icon' onClick={handleCloseModal}>
-                            <IconClose size={'100px'} />
+                            <p className="character__section">Id: <span className="character__value">{selectedCharacter.id}</span></p>
+                            <button className="character__button" onClick={handleCloseModal}>
+                                <IconClose className="character__buttonX" size={"2rem"} />
                             </button>
                         </div>
                         <h2 className="characters__name">{selectedCharacter.name}</h2>
@@ -44,6 +44,9 @@ export const CharacterModal = ({ selectedCharacter, handleCloseModal }) => {
                         <p className="character__section">Location: </p>
                         <p className="character__value">{selectedCharacter.location.name}</p>
                     </div>
+                    <button className="character__button character__button--movil" onClick={handleCloseModal}>
+                        <IconClose size={"2rem"} />
+                    </button>
                 </div>
                 
             </div>
