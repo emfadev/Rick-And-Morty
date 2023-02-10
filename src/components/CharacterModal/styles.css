@@ -36,3 +36,13 @@
   object-fit: cover;
 }
 }
+
+.character-close__icon {
+
+}
+
+.character-close__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
