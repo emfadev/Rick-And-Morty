@@ -1,5 +1,5 @@
 import React from "react";
-// import "./characterModal.css"
+import { IconClose } from "../../assets/svg";
 import "./styles.css"
 
 export const CharacterModal = ({ selectedCharacter, handleCloseModal }) => {
@@ -17,7 +17,9 @@ export const CharacterModal = ({ selectedCharacter, handleCloseModal }) => {
                     <div>
                         <div className="character__status character__status--x">
                            <p className="character__section">Id: <span className="character__value">{selectedCharacter.id}</span></p>
-                            <button onClick={handleCloseModal}>x</button>
+                            <button style={{ height: '100px', width: '100px' }}  className='character-close__icon' onClick={handleCloseModal}>
+                            <IconClose size={'100px'} />
+                            </button>
                         </div>
                         <h2 className="characters__name">{selectedCharacter.name}</h2>
                         <div className="character__status">
