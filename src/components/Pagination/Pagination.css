@@ -6,9 +6,11 @@
     width: min(120rem, 90%);
     margin: 4rem auto 1rem auto;
 }
+
 .pagination__page {
     color: var(--LightColor);
 }
+
 .pagination__button {
     background-color: var(--LightColor);
     border-radius: 0;
@@ -22,6 +24,7 @@
     transition: background-color .3s ease, color .3s ease;
     border-radius: .5rem;
 }
+
 .pagination__button:hover {
     background-color: var(--mainColor);
     color: var(--LightColor);

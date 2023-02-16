@@ -52,4 +52,4 @@ export const CharacterModal = ({ selectedCharacter, handleCloseModal }) => {
             </div>
         </div>
     );
-  };
+};
